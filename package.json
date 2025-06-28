@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "build": "npx respec http://localhost:8000/base.html public/index.html --disable-sandbox",
+    "watch:build": "nodemon --watch . --ext 'md' --exec 'npm run build'"
+  },
+
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}

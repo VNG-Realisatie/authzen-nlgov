@@ -1,0 +1,2 @@
+# API Version
+This document describes the API version 1.0. Any updates to this API through subsequent revisions of this document or other documents MAY augment this API, but MUST NOT modify the API described here. Augmentation MAY include additional API methods or additional parameters to existing API methods, additional authorization mechanisms, or additional optional headers in API requests. All API methods for version 1.0 MUST be immediately preceded by the relative URL path `/v1/`.

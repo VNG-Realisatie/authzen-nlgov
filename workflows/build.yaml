@@ -1,0 +1,42 @@
+name: Build and Check
+permissions:
+  contents: read
+  pages: write      # To deploy to GitHub Pages
+  id-token: write
+on:
+  workflow_dispatch:
+  pull_request:
+  push:
+    branches:
+      - main
+      - develop
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-22.04
+    steps:
+      # Checkout the repo
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Build ReSpec file
+        run: |
+          python3 -m http.server 8000 &
+          mkdir public
+          sleep 5
+          npx respec http://localhost:8000/base.html public/index.html --disable-sandbox
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./public
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,11 @@
+.idea
+.cache
+*.pdf
+*.txt
+*.xml
+*.ascii-art
+*.svg
+.DS_Store
+index.html
+public/
+/node_modules/
