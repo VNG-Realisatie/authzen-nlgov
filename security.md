@@ -11,7 +11,7 @@ As a result, the connection between the PEP and the PDP MUST be secured using th
 
 ## Policy Confidentiality and Sender Authentication {#security-confidentiality-authn}
 
-Additionally, the PDP SHOULD authenticate the calling PEP. There are several ways authentication can be established. These ways are out of scope of this specification. They MAY include:
+Additionally, the PDP SHOULD authenticate <span class="nlgov-add">requests from</span>the <span class="nlgov-del">calling</span> PEP. There are several ways authentication can be established. These ways are out of scope of this specification. They MAY include:
 
  - Mutual TLS
  - OAuth-based authentication
@@ -19,13 +19,13 @@ Additionally, the PDP SHOULD authenticate the calling PEP. There are several way
 
 The choice and strength of either mechanism is not in scope.
 
-Authenticating the PEP allows the PDP to avoid common attacks (such as DoS - see below) and/or reveal its internal policies. A malicious actor could craft a large number of requests to try and understand what policies the PDP is configured with. Requesting a client (PEP) be authenticated mitigates that risk.
+Authenticating <span class="nlgov-add">requests from</span> the PEP allows the PDP to avoid common attacks (such as DoS - see below) and/or reveal its internal policies. A malicious actor could craft a large number of requests to try and understand what policies the PDP is configured with. Requesting a client (PEP) be authenticated mitigates that risk.
 
 ## Trust {#security-trust}
 
 In ABAC, there is occasionally conversations around the trust between PEP and PDP: how can the PDP trust the PEP to send the right values in? This is a misplaced concern. The PDP must trust the PEP as ultimately, the PEP is the one responsible for enforcing the decision the PDP produces.
 
-## Availability & Denial of Service {#security-avail-dos}}
+## Availability & Denial of Service {#security-avail-dos}
 
 The PDP SHOULD apply reasonable protections to avoid common attacks tied to request payload size, the number of requests, invalid JSON, nested JSON attacks, or memory consumption. Rate limiting is one such way to address such issues.
 

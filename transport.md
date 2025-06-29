@@ -14,8 +14,8 @@ The following is a non-normative example of the HTTPS binding of the Access Eval
 <pre class="http example" id="example-access-evaluation-request" title="Example of an HTTPS Access Evaluation Request">
 POST /access/v1/evaluation HTTP/1.1
 Host: pdp.mycompany.com
-Authorization: Bearer <myoauthtoken>
-X-Request-ID: bfe9eb29-ab87-4ca3-be83-a1d5d8305716
+Authorization: Bearer &lt;myoauthtoken&gt;
+<span class="nlgov-del"><span class="nlgov-del">X-Request-ID: bfe9eb29-ab87-4ca3-be83-a1d5d8305716</span></span>
 
 {
   "subject": {
@@ -43,7 +43,7 @@ Following is a non-normative example of an HTTPS Access Evaluation Response:
 <pre class="http example" id="example-access-evaluation-response" title="Example of an HTTP Access Evaluation Response">
 HTTP/1.1 OK
 Content-type: application/json
-X-Request-ID: bfe9eb29-ab87-4ca3-be83-a1d5d8305716
+<span class="nlgov-del">X-Request-ID: bfe9eb29-ab87-4ca3-be83-a1d5d8305716</span>
 
 {
   "decision": true
@@ -58,8 +58,8 @@ The following is a non-normative example of a the HTTPS binding of the Access Ev
 <pre class="http example" id="example-access-evaluations-request" title="Example of an HTTPS Access Evaluations Request">
 POST /access/v1/evaluations HTTP/1.1
 Host: pdp.mycompany.com
-Authorization: Bearer <myoauthtoken>
-X-Request-ID: bfe9eb29-ab87-4ca3-be83-a1d5d8305716
+Authorization: Bearer &lt;myoauthtoken&gt;
+<span class="nlgov-del">X-Request-ID: bfe9eb29-ab87-4ca3-be83-a1d5d8305716</span>
 
 {
   "subject": {
@@ -106,7 +106,7 @@ The following is a non-normative example of an HTTPS Access Evaluations Response
 <pre class="http example" id="example-access-evaluations-response" title="Example of an HTTPS Access Evaluations Response">
 HTTP/1.1 OK
 Content-type: application/json
-X-Request-ID: bfe9eb29-ab87-4ca3-be83-a1d5d8305716
+<span class="nlgov-del">X-Request-ID: bfe9eb29-ab87-4ca3-be83-a1d5d8305716</span>
 
 {
   "evaluations": [
@@ -140,8 +140,8 @@ The following is a non-normative example of the HTTPS binding of the Subject Sea
 <pre class="http example" id="example-subject-search-request" title="Example of an HTTPS Subject Search Request">
 POST /access/v1/search/subject HTTP/1.1
 Host: pdp.mycompany.com
-Authorization: Bearer <myoauthtoken>
-X-Request-ID: bfe9eb29-ab87-4ca3-be83-a1d5d8305716
+Authorization: Bearer &lt;myoauthtoken&gt;
+<span class="nlgov-del">X-Request-ID: bfe9eb29-ab87-4ca3-be83-a1d5d8305716</span>
 
 {
   "subject": {
@@ -165,7 +165,7 @@ The following is a non-normative example of an HTTPS Subject Search Response:
 <pre class="http example" id="example-subject-search-response" title="Example of an HTTPS Subject Search Response">
 HTTP/1.1 OK
 Content-type: application/json
-X-Request-ID: bfe9eb29-ab87-4ca3-be83-a1d5d8305716
+<span class="nlgov-del">X-Request-ID: bfe9eb29-ab87-4ca3-be83-a1d5d8305716</span>
 
 {
   "results": [
@@ -192,8 +192,8 @@ The following is a non-normative example of the HTTPS binding of the Resource Se
 <pre class="http example" id="example-resource-search-request" title="Example of an HTTPS Resource Search Request">
 POST /access/v1/search/resource HTTP/1.1
 Host: pdp.mycompany.com
-Authorization: Bearer <myoauthtoken>
-X-Request-ID: bfe9eb29-ab87-4ca3-be83-a1d5d8305716
+Authorization: Bearer &lt;myoauthtoken&gt;
+<span class="nlgov-del">X-Request-ID: bfe9eb29-ab87-4ca3-be83-a1d5d8305716</span>
 
 {
   "subject": {
@@ -217,7 +217,7 @@ The following is a non-normative example of an HTTPS Resource Search Response:
 <pre class="http example" id="example-resource-search-response" title="Example of an HTTPS Resource Search Response">
 HTTP/1.1 OK
 Content-type: application/json
-X-Request-ID: bfe9eb29-ab87-4ca3-be83-a1d5d8305716
+<span class="nlgov-del">X-Request-ID: bfe9eb29-ab87-4ca3-be83-a1d5d8305716</span>
 
 {
   "results": [
@@ -244,8 +244,8 @@ The following is a non-normative example of the HTTPS binding of the Action Sear
 <pre class="http example" id="example-action-search-request" title="Example of an HTTPS Action Search Request">
 POST /access/v1/search/action HTTP/1.1
 Host: pdp.mycompany.com
-Authorization: Bearer <myoauthtoken>
-X-Request-ID: bfe9eb29-ab87-4ca3-be83-a1d5d8305716
+Authorization: Bearer &lt;myoauthtoken&gt;
+<span class="nlgov-del">X-Request-ID: bfe9eb29-ab87-4ca3-be83-a1d5d8305716</span>
 
 {
   "subject": {
@@ -270,7 +270,7 @@ The following is a non-normative example of an HTTPS Action Search Response:
 <pre class="http example" id="example-action-search-response" title="Example of an HTTPS Action Search Response">
 HTTP/1.1 OK
 Content-type: application/json
-X-Request-ID: bfe9eb29-ab87-4ca3-be83-a1d5d8305716
+<span class="nlgov-del">X-Request-ID: bfe9eb29-ab87-4ca3-be83-a1d5d8305716</span>
 
 {
   "results": [
@@ -307,22 +307,22 @@ To make this concrete:
 - a `401` HTTPS status code indicates that the caller (policy enforcement point) did not properly authenticate to the PDP - for example, by omitting a required `Authorization` header, or using an invalid access token.
 - the PDP indicates to the caller that the authorization request is denied by sending a response with a `200` HTTPS status code, along with a payload of `{ "decision": false }`.
 
-### Request Identification
-All requests to the API MAY have request identifiers to uniquely identify them. The API client (PEP) is responsible for generating the request identifier. If present, the request identifier SHALL be provided using the HTTPS Header `X-Request-ID`. The value of this header is an arbitrary string. The following non-normative example describes this header:
+### <span class="nlgov-del">Request Identification</span>
+<span class="nlgov-del">All requests to the API MAY have request identifiers to uniquely identify them. The API client (PEP) is responsible for generating the request identifier. If present, the request identifier SHALL be provided using the HTTPS Header `X-Request-ID`. The value of this header is an arbitrary string. The following non-normative example describes this header:</span>
 
-<pre class="http example" id="request-id-example" title="Example HTTPS request with a Request Id Header">
+<pre class="http example nlgov-del" id="request-id-example" title="Example HTTPS request with a Request Id Header">
 POST /access/v1/evaluation HTTP/1.1
 Authorization: Bearer mF_9.B5f-4.1JqM
-X-Request-ID: bfe9eb29-ab87-4ca3-be83-a1d5d8305716
+<span class="nlgov-del">X-Request-ID: bfe9eb29-ab87-4ca3-be83-a1d5d8305716</span>
 </pre>
 
-### Request Identification in a Response
-A PDP responding to an Authorization API request that contains an `X-Request-ID` header MUST include a request identifier in the response. The request identifier is specified in the HTTPS Response header: `X-Request-ID`. If the PEP specified a request identifier in the request, the PDP MUST include the same identifier in the response to that request.
+### <span class="nlgov-del">Request Identification in a Response</span>
+<span class="nlgov-del">A PDP responding to an Authorization API request that contains an `X-Request-ID` header MUST include a request identifier in the response. The request identifier is specified in the HTTPS Response header: `X-Request-ID`. If the PEP specified a request identifier in the request, the PDP MUST include the same identifier in the response to that request.</span>
 
-The following is a non-normative example of an HTTPS Response with this header:
+<span class="nlgov-del">The following is a non-normative example of an HTTPS Response with this header:</span>
 
-<pre class="http example" id="example-response-request-id" title="Example HTTPS response with a Request Id Header">
+<pre class="http example nlgov-del" id="example-response-request-id" title="Example HTTPS response with a Request Id Header">
 HTTP/1.1 OK
 Content-type: application/json
-X-Request-ID: bfe9eb29-ab87-4ca3-be83-a1d5d8305716
+<span class="nlgov-del">X-Request-ID: bfe9eb29-ab87-4ca3-be83-a1d5d8305716</span>
 </pre>

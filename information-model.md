@@ -150,6 +150,8 @@ The following is a non-normative example of an action:
 ## Context {#context}
 The Context object is a set of attributes that represent environmental or contextual data about the request such as time of day. It is a JSON ([[RFC8259]]) object. <span class="nlgov-add">The Context MAY contain [[JSON-LD11]] keys starting with the `@`-symbol.</span>
 
+<span class="nlgov-add">As described in [](#security-trust) it is recommended to consider values in the information model as trusted and valid. For purposes of defense-in-depth and traceability proof of values MAY be provided. If provided, these SHOULD be included in the Context object.</span>
+
 The following is a non-normative example of a Context:
 
 <pre class="json example" id="context-example" title="Example Context">
