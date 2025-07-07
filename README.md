@@ -3,7 +3,7 @@
 | Kennis centrum Architectuur | Marc de Boer |
 <hr/>
 
-* Welkom
+# Welkom
 
 Deze repository bevat de specificatie van het Nederlands overheidsprofiel op AuthZEN. 
 
@@ -11,3 +11,11 @@ AuthZEN is een OpenID standaard voor toegangsverlening, ook wel autorisatie. Dit
 
 Zie voor meer informatie de website van het project FTV:
 https://vng-realisatie.github.io/ftv/methodiek/authzen-nlgov/
+
+## Contact
+
+Neem voor meer informatie contact op met:
+
+Marc de Boer
+[marc.deboer@vng.nl](mailto:marc.deboer@vng.nl)
+06-14460350
